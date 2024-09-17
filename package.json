@@ -1,0 +1,40 @@
+{
+  "name": "reply-with-quotes-api",
+  "version": "1.0.0",
+  "description": "API to access OpenAi",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest",
+    "start": "node -r ts-node/register --env-file=.env src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sigoofballde/reply-with-quotes-api.git"
+  },
+  "author": "John Nelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sigoofballde/reply-with-quotes-api/issues"
+  },
+  "homepage": "https://github.com/sigoofballde/reply-with-quotes-api#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.3",
+    "@google/generative-ai": "^0.19.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
+    "@typescript-eslint/parser": "^8.5.0",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jest": "^29.7.0",
+    "openai": "^4.61.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "prettier-eslint": "^16.3.0"
+  }
+}
