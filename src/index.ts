@@ -95,7 +95,7 @@ app.post('/getConversation', async (req: Request, res: Response) => {
         )!
 
       const result: Quote[] = parseQuotes(parsedResult)
-      res.status(200).json(parsedResult)
+      res.status(200).json(result)
     } else {
       throw new Error('Gemini returned empty array!')
     }
