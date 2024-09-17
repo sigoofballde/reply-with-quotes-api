@@ -7,6 +7,8 @@ import {
   GenerateContentCandidate,
   GoogleGenerativeAI,
 } from '@google/generative-ai'
+import { Quote } from './interfaces/general'
+import { parseQuotes } from './utils/dataManipulation'
 
 const app = express()
 const port = process.env.PORT || 7069
@@ -92,6 +94,7 @@ app.post('/getConversation', async (req: Request, res: Response) => {
             element.includes('**') && !element.includes('**Context:**')
         )!
 
+      const result: Quote[] = parseQuotes(parsedResult)
       res.status(200).json(parsedResult)
     } else {
       throw new Error('Gemini returned empty array!')
