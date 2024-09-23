@@ -1,15 +1,7 @@
-import axios, { AxiosError } from 'axios'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import express, { Request, Response } from 'express'
 
-import {
-  GenerateContentCandidate,
-  GoogleGenerativeAI,
-} from '@google/generative-ai'
-import { Quote } from './interfaces/general'
-import { parseQuotes } from './utils/dataManipulation'
-import { emptyDataSet } from './utils/errors'
 import { routes } from './routes'
 
 const app = express()
