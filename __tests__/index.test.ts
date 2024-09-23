@@ -1,5 +1,5 @@
-import { appendFile } from 'fs'
 import httpMocks from 'node-mocks-http'
+import { home, getConversation } from '../src/controllers/index.controller'
 
 describe('Test for GET endpoints', () => {
   test('/', async () => {
@@ -7,6 +7,11 @@ describe('Test for GET endpoints', () => {
       method: 'GET',
       url: '/',
     })
+
+    const response = httpMocks.createResponse()
+
+    const reply = home(request, response)
+    console.log(reply)
   })
 })
 
