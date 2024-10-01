@@ -6,12 +6,13 @@ import { Request, Response } from 'express'
 import { parseQuotes } from '../utils/dataManipulation'
 import { Quote } from '../interfaces/general'
 import { emptyDataSet } from '../utils/errors'
+import { inspect } from 'util'
 
 // const API_KEY = process.env.ANTHROPIC_API_KEY
 const API_KEY = process.env.GEMINI_API_KEY
 
 export const home = (req: Request, res: Response) => {
-  res.send('API is up and running!')
+  res.json({ response: 'API is up and running!' })
 }
 
 /**OPENAI CHATGPT TRY */
@@ -86,7 +87,6 @@ export const getConversation = async (req: Request, res: Response) => {
       if (!result || result.length === 0) {
         throw emptyDataSet
       }
-      console.dir(result)
       res.status(200).json(result)
     } else {
       throw emptyDataSet
